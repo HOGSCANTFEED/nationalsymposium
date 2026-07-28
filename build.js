@@ -22,6 +22,12 @@ const CSV_URL =
 const TEMPLATE_PATH = path.join(__dirname, 'index.template.html');
 const OUTPUT_PATH = path.join(__dirname, 'index.html');
 
+// The "posters" page — a print-ready A4 poster built from the same merged data
+// (speakers, date/time, registration link). Same template/output relationship
+// as index: edit poster.template.html, never poster.html.
+const POSTER_TEMPLATE_PATH = path.join(__dirname, 'poster.template.html');
+const POSTER_OUTPUT_PATH = path.join(__dirname, 'poster.html');
+
 const DEFAULT_TIME_LINE = '12:00 – 1:30 pm AEST';
 
 // Used for every "get in touch" link on the page whenever the form's
@@ -237,6 +243,17 @@ async function main() {
 
   fs.writeFileSync(OUTPUT_PATH, html);
   console.log('index.html rebuilt from form data.');
+
+  // ---- Poster page ----
+  // Same data, a different template. The poster only surfaces the speakers,
+  // date/time and registration link, so a plain token swap over `data` is all
+  // it needs — no BLOCK sections. Values are escaped exactly as for index.html.
+  let poster = fs.readFileSync(POSTER_TEMPLATE_PATH, 'utf8');
+  for (const [key, value] of Object.entries(data)) {
+    poster = poster.split(`{{${key}}}`).join(escapeHtml(value));
+  }
+  fs.writeFileSync(POSTER_OUTPUT_PATH, poster);
+  console.log('poster.html rebuilt from form data.');
 }
 
 main().catch((err) => {

@@ -233,6 +233,11 @@
   .next-where{font-size:.95rem; color:var(--ink-2); margin-top:2px}
   .next-card .btn{margin-top:20px}
   .next-note{font-size:.85rem; color:var(--ink-2); margin-top:14px; line-height:1.5}
+  .poster-link{margin-top:12px; font-size:.88rem}
+  .poster-link a{display:inline-flex; align-items:center; gap:7px; font-weight:600; color:var(--primary-dk); text-decoration:none}
+  .poster-link a:hover{text-decoration:underline}
+  .poster-link svg{width:14px; height:14px; flex:none; transition:transform .18s var(--ease)}
+  .poster-link a:hover svg{transform:translateX(3px)}
 
   .upcoming{margin-top:20px; padding-top:18px; border-top:1px dashed var(--line-2)}
   .upcoming p{font-size:.75rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); margin-bottom:10px}
@@ -410,6 +415,7 @@
     <nav class="nav" aria-label="Primary">
       <a href="#next">Next session</a>
       <a href="#about">Questions</a>
+      <a href="poster.html">Poster</a>
       <a href="#contact">Contact</a>
       <a class="btn btn-primary" href="{{REG_LINK}}" target="_blank" rel="noopener">Register</a>
     </nav>
@@ -457,6 +463,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <p class="next-note">Registrations are checked so the room stays clinician-only. Your Teams link arrives by email once you're approved.</p>
+          <p class="poster-link"><a href="poster.html">Download a poster to print &amp; share
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></p>
 
           <!--BLOCK:UPCOMING-->
           <div class="upcoming">
@@ -636,13 +645,14 @@
         <svg class="mark" aria-hidden="true"><use href="#berry"/></svg>
         <b>National Paediatric Feeding Symposium</b>
       </div>
-      <p>Convened by Chris, Frances and Heidi as part of the education role of the SLHD multidisciplinary paediatric feeding team.</p>
+      <p>Convened by Chris, Frances and Heidi as part of the education role in the District-wide feeding team.</p>
       <p>A clinician-led information and practice-sharing forum. It is not a research event and makes no claims to endrose best practice.</p>
       <p><strong style="color:var(--ink)">This is not a clinical service.</strong> We can't take appointments, referrals or clinical enquiries here. If you're a parent or carer looking for help with your child's feeding, please speak to your GP, paediatrician or treating team.</p>
     </div>
     <div>
       <p><strong style="color:var(--ink)">The essentials</strong></p>
       <p>Free · Online via Microsoft Teams<br>Live only — not recorded<br>Held about four times a year</p>
+      <p>The views of the clinicians and speakers are theirs alone and do not reflect those of SLHD.</p>
       <p class="foot-meta">© <span id="yr">2026</span> · Chris, Heidi, Frances</p>
     </div>
   </div>

@@ -30,8 +30,16 @@ A few things about how the form works:
   (not `index.html`) if the look or layout ever needs to change.
 - `index.html` — generated automatically by `build.js`. Never edit this
   file directly; it gets overwritten on the next run.
+- `poster.template.html` — a print-ready A4 poster (the **Poster** page),
+  built from the *same* form data as the main site but showing only the
+  speakers, date/time and registration link. Edit this file to change the
+  poster's design; use the form to change its content. Visitors open it from
+  the site and click **Download PDF** (their browser's "Save as PDF") to get
+  a shareable poster — nothing is generated server-side.
+- `poster.html` — generated automatically by `build.js`, same as
+  `index.html`. Never edit directly.
 - `build.js` — fetches the form's responses (published as CSV), merges
-  them into the template, and writes `index.html`.
+  them into the templates, and writes both `index.html` and `poster.html`.
 - `.github/workflows/refresh-site.yml` — runs `build.js` once a day (or on
   demand via **Run workflow**) and commits `index.html` if it changed.
   Uses GitHub's own built-in token, so there's no personal access token to

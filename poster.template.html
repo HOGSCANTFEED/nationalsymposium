@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Paediatric Feeding Symposium — printable poster</title>
+<meta name="description" content="A printable A4 poster for the next National Paediatric Feeding Symposium — speakers, date and time, and how to register. Save as PDF and share.">
+<meta name="theme-color" content="#123F2E">
+<meta name="robots" content="noindex">
+
+<!--
+==================================================================================
+  EDIT THIS FILE. DO NOT EDIT poster.html — IT IS GENERATED AND OVERWRITTEN.
+==================================================================================
+  poster.html is rebuilt from this template plus whatever a colleague submitted
+  through the Google Form, by the same build.js that builds index.html. To change
+  the poster's content, use the form. To change its design, edit this file.
+
+  build.js does a literal string swap on every {{TOKEN}} below. The only dynamic
+  content this poster draws from the form is: the speakers, the date and time,
+  and the registration link (plus the registration-status pill). Everything else
+  is fixed wording that lives here in the template.
+
+  Same comment rule as the main template: never type the two-character
+  comment-closing sequence inside a comment — HTML comments do not nest.
+==================================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:        #F7F9F8;
+    --bg-tint:   #ECF2EF;
+    --paper:     #FFFFFF;
+    --line:      #E2EAE6;
+    --line-2:    #C9D7D1;
+
+    --ink:       #16262C;
+    --ink-2:     #54686F;
+
+    --primary:   #1B5C45;
+    --primary-dk:#123F2E;
+    --primary-sf:#E6F1EC;
+    --blue:      #1D3D5C;
+    --blue-sf:   #E9F0F7;
+    --honey:     #F6C453;
+    --honey-ink: #4A3407;
+    --berry:     #C2354B;
+
+    --sb-body:   #D9364C;
+    --sb-hi:     #F0637A;
+    --sb-seed:   #FFDE9B;
+    --sb-leaf:   #2F7A55;
+    --sb-leaf-hi:#4FA377;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg-tint);
+    color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding:24px 16px 64px;
+  }
+  h1,h2,h3{
+    font-family:"Fraunces","Iowan Old Style","Georgia",serif;
+    font-weight:600; line-height:1.06; letter-spacing:-.015em; margin:0;
+    text-wrap:balance;
+  }
+  p{margin:0}
+
+  /* ---------- screen-only toolbar ---------- */
+  .toolbar{
+    max-width:210mm; margin:0 auto 20px;
+    display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+  }
+  .toolbar .hint{font-size:.85rem; color:var(--ink-2); max-width:44ch}
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:inherit; font-size:.95rem; font-weight:600; line-height:1;
+    padding:13px 20px; border-radius:999px; border:1.5px solid transparent;
+    text-decoration:none; cursor:pointer; white-space:nowrap;
+    transition:transform .18s cubic-bezier(.22,.68,.36,1), box-shadow .18s, background-color .18s;
+  }
+  .btn svg{width:16px; height:16px; flex:none}
+  .btn-primary{background:var(--primary); color:#fff; box-shadow:0 6px 18px -8px rgba(27,92,69,.75)}
+  .btn-primary:hover{background:var(--primary-dk); transform:translateY(-2px)}
+  .btn-quiet{background:var(--paper); color:var(--ink); border-color:var(--line-2)}
+  .btn-quiet:hover{border-color:var(--primary); color:var(--primary-dk)}
+  .toolbar-actions{display:flex; gap:10px; flex-wrap:wrap}
+
+  /* ---------- the A4 sheet ---------- */
+  .sheet{
+    width:210mm; min-height:297mm; margin:0 auto;
+    background:var(--paper); color:var(--ink);
+    box-shadow:0 2px 4px rgba(18,45,38,.06), 0 24px 60px -22px rgba(18,45,38,.4);
+    display:flex; flex-direction:column; overflow:hidden;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .berry-mark{width:100%; height:100%; display:block}
+
+  /* ---- header band ---- */
+  .p-head{
+    position:relative; overflow:hidden; color:#fff;
+    padding:10mm 15mm 5mm;
+    background:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,.10) 1px, transparent 0) 0 0/20px 20px,
+      linear-gradient(150deg,#123F2E 0%, #1B5C45 52%, #1D3D5C 100%);
+  }
+  .p-head .brandrow{display:flex; align-items:center; gap:11px; margin-bottom:7mm}
+  .p-head .brandrow .mark{width:26px; height:32px; flex:none}
+  .p-head .brandrow b{font-size:.95rem; font-weight:600; letter-spacing:.01em}
+  .p-eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--honey); margin-bottom:9px;
+  }
+  .p-eyebrow::before{
+    content:""; width:8px; height:10px; flex:none; border-radius:60% 60% 50% 50%;
+    background:var(--sb-body); transform:rotate(-8deg);
+  }
+  .p-head h1{font-size:30pt; line-height:1.02; margin-bottom:.28em}
+  .p-head h1 em{font-style:normal; color:#EAF3EE; display:block; font-weight:500}
+  .p-head .tagline{color:#D4E5DD; font-size:11.5pt; max-width:52ch; line-height:1.42}
+
+  /* ---- date strip ---- */
+  .p-when{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:4mm 15mm; background:var(--honey); color:var(--honey-ink);
+  }
+  .p-when .date{font-family:"Fraunces","Georgia",serif; font-weight:600; font-size:19pt; line-height:1.08; letter-spacing:-.01em}
+  .p-when .meta{font-size:11pt; font-weight:600; margin-top:4px}
+  .p-when .badge{
+    flex:none; display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.55); border:1.5px solid rgba(74,52,7,.28);
+    color:var(--honey-ink); font-size:9.5pt; font-weight:700; letter-spacing:.02em;
+    padding:8px 14px; border-radius:999px;
+  }
+  .p-when .badge .dot{width:8px; height:8px; border-radius:50%; background:currentColor; flex:none}
+  .p-when .badge:empty{display:none}
+
+  /* ---- speakers ---- */
+  .p-body{flex:1 1 auto; padding:7mm 15mm 3mm}
+  .p-section-eyebrow{
+    display:flex; align-items:center; gap:9px;
+    font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--primary-dk); margin-bottom:3mm;
+  }
+  .p-section-eyebrow::before{
+    content:""; width:8px; height:10px; flex:none; border-radius:60% 60% 50% 50%;
+    background:var(--sb-body); transform:rotate(-8deg);
+  }
+  .p-section-eyebrow .rest{color:var(--ink-2); font-weight:600; letter-spacing:.02em; text-transform:none}
+
+  .speakers{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3.5mm}
+  .speaker{
+    display:grid; grid-template-columns:auto 1fr; gap:14px;
+    border:1px solid var(--line); border-radius:14px; padding:4mm 6mm;
+    background:linear-gradient(180deg,#fff, #FBFDFC);
+  }
+  .speaker .num{
+    align-self:start; font-size:9pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--blue); background:var(--blue-sf); padding:6px 11px; border-radius:999px; white-space:nowrap;
+  }
+  .speaker h3{font-size:15pt; line-height:1.15; margin-bottom:3px}
+  .speaker .title{color:var(--ink-2); font-size:10.5pt; line-height:1.4; margin-bottom:7px}
+  .speaker .title:empty{display:none}
+  .speaker .row{display:flex; flex-wrap:wrap; gap:7px 10px; align-items:center}
+  .speaker .chip{
+    font-size:9pt; font-weight:600; color:var(--primary); background:var(--primary-sf);
+    border-radius:999px; padding:4px 10px;
+  }
+  .speaker .loc{display:inline-flex; align-items:center; gap:6px; font-size:9.5pt; color:var(--ink-2)}
+  .speaker .loc::before{
+    content:""; width:12px; height:12px; flex:none;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2354686F' stroke-width='2'%3E%3Cpath d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .speaker .chip:empty,.speaker .loc:empty{display:none}
+
+  /* ---- register + footer ---- */
+  .p-register{
+    margin:5mm 15mm 0; padding:5mm;
+    border:1px solid var(--line); border-radius:16px;
+    background:linear-gradient(160deg,#EAF2ED,#E4EDF5);
+    display:flex; align-items:center; justify-content:space-between; gap:18px;
+  }
+  .p-register .reg-copy h2{font-size:15pt; color:var(--primary-dk); margin-bottom:5px}
+  .p-register .reg-copy p{font-size:10pt; color:var(--ink-2); line-height:1.45; max-width:50ch}
+  .p-register .reg-link{
+    display:block; margin-top:8px; font-size:10.5pt; font-weight:600; color:var(--primary-dk);
+    overflow-wrap:anywhere;
+  }
+  .p-register .reg-badge{
+    flex:none; align-self:stretch; min-width:34mm;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; text-align:center;
+    background:var(--primary); color:#fff; border-radius:12px; padding:6mm 5mm;
+  }
+  .p-register .reg-badge .k{font-size:8.5pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase; opacity:.85}
+  .p-register .reg-badge .v{font-family:"Fraunces","Georgia",serif; font-weight:600; font-size:16pt; line-height:1.1}
+
+  .p-foot{
+    margin-top:auto; padding:6mm 15mm 6mm;
+    display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
+    color:var(--ink-2); font-size:8.5pt; line-height:1.5;
+  }
+  .p-foot .mark{width:20px; height:25px; flex:none}
+  .p-foot .who{display:flex; align-items:flex-start; gap:10px; max-width:64%}
+  .p-foot strong{color:var(--ink); font-weight:600}
+  .p-foot .site{text-align:right; font-weight:600; color:var(--primary-dk); font-size:9.5pt}
+
+  /* ---------- print ---------- */
+  @page{ size:A4; margin:0 }
+  @media print{
+    body{background:#fff; padding:0}
+    .toolbar{display:none !important}
+    .sheet{
+      width:210mm; min-height:297mm; margin:0; box-shadow:none;
+    }
+  }
+
+  /* ---------- small screens: let the sheet shrink to fit ---------- */
+  @media (max-width:820px){
+    body{padding:16px 0 48px}
+    .toolbar{padding:0 16px}
+    .sheet{width:100%; min-height:0}
+    .p-head,.p-when,.p-body,.p-register,.p-foot{padding-left:7mm; padding-right:7mm}
+    .p-register{margin-left:7mm; margin-right:7mm}
+    .p-head h1{font-size:26pt}
+    .p-when{flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<!-- Screen-only toolbar: download + back. Hidden when printing. -->
+<div class="toolbar">
+  <p class="hint">Tip: click <strong>Download&nbsp;PDF</strong>, then choose <strong>“Save as PDF”</strong> as the destination. Set paper size <strong>A4</strong>, margins “None”, and tick “Background graphics”. If it spills onto a second page, turn on “Fit to page”.</p>
+  <div class="toolbar-actions">
+    <a class="btn btn-quiet" href="index.html">← Back to site</a>
+    <button class="btn btn-primary" type="button" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg>
+      Download PDF
+    </button>
+  </div>
+</div>
+
+<!-- The strawberry mark, defined once and reused. -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="berry" viewBox="0 0 100 122">
+    <path d="M50 14 C46 4 34 2 31 9 C40 8 44 12 46 18 Z" fill="var(--sb-leaf-hi)"/>
+    <path d="M50 14 C54 4 66 2 69 9 C60 8 56 12 54 18 Z" fill="var(--sb-leaf)"/>
+    <path d="M50 15 C41 6 27 8 26 16 C36 15 43 17 48 22 Z" fill="var(--sb-leaf)"/>
+    <path d="M50 15 C59 6 73 8 74 16 C64 15 57 17 52 22 Z" fill="var(--sb-leaf-hi)"/>
+    <rect x="47.5" y="16" width="5" height="10" rx="2.5" fill="var(--sb-leaf)"/>
+    <path d="M50 26 C22 26 12 45 14 68 C16 90 33 118 50 118 C67 118 84 90 86 68 C88 45 78 26 50 26 Z" fill="var(--sb-body)"/>
+    <path d="M50 26 C36 26 26 34 21 47 C30 40 40 38 50 38 Z" fill="var(--sb-hi)" opacity=".55"/>
+    <g fill="var(--sb-seed)">
+      <ellipse cx="34" cy="52" rx="2.1" ry="3.1" transform="rotate(-18 34 52)"/>
+      <ellipse cx="50" cy="49" rx="2.1" ry="3.1"/>
+      <ellipse cx="66" cy="52" rx="2.1" ry="3.1" transform="rotate(18 66 52)"/>
+      <ellipse cx="27" cy="68" rx="2.1" ry="3.1" transform="rotate(-22 27 68)"/>
+      <ellipse cx="42" cy="66" rx="2.1" ry="3.1" transform="rotate(-6 42 66)"/>
+      <ellipse cx="58" cy="66" rx="2.1" ry="3.1" transform="rotate(6 58 66)"/>
+      <ellipse cx="73" cy="68" rx="2.1" ry="3.1" transform="rotate(22 73 68)"/>
+      <ellipse cx="35" cy="84" rx="2.1" ry="3.1" transform="rotate(-14 35 84)"/>
+      <ellipse cx="50" cy="83" rx="2.1" ry="3.1"/>
+      <ellipse cx="65" cy="84" rx="2.1" ry="3.1" transform="rotate(14 65 84)"/>
+      <ellipse cx="44" cy="99" rx="2" ry="2.9" transform="rotate(-8 44 99)"/>
+      <ellipse cx="57" cy="99" rx="2" ry="2.9" transform="rotate(8 57 99)"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ============================= THE POSTER ============================= -->
+<div class="sheet">
+
+  <header class="p-head">
+    <div class="brandrow">
+      <svg class="mark" role="img" aria-label="Strawberry logo"><use href="#berry"/></svg>
+      <b>National Paediatric Feeding Symposium</b>
+    </div>
+    <p class="p-eyebrow">Save the date · Free · Online</p>
+    <h1>Paediatric Feeding <em>Symposium</em></h1>
+    <p class="tagline">A free national community of practice for clinicians working with children's feeding difficulties. Three short talks from around the country, then a live panel Q&amp;A — over one lunchtime.</p>
+  </header>
+
+  <div class="p-when">
+    <div>
+      <p class="date">{{DATE_LINE}}</p>
+      <p class="meta">{{TIME_LINE}} · Online via Microsoft Teams · Free</p>
+    </div>
+    <span class="badge"><span class="dot"></span>{{BADGE_TEXT}}</span>
+  </div>
+
+  <div class="p-body">
+    <p class="p-section-eyebrow">This session <span class="rest">— three 20-minute talks, then a live panel Q&amp;A</span></p>
+    <ul class="speakers">
+      <li class="speaker">
+        <span class="num">Talk 1</span>
+        <div>
+          <h3>{{TALK_1_NAME}}</h3>
+          <p class="title">{{TALK_1_TITLE}}</p>
+          <div class="row">
+            <span class="chip">{{TALK_1_DISC}}</span>
+            <span class="loc">{{TALK_1_LOCATION}}</span>
+          </div>
+        </div>
+      </li>
+      <li class="speaker">
+        <span class="num">Talk 2</span>
+        <div>
+          <h3>{{TALK_2_NAME}}</h3>
+          <p class="title">{{TALK_2_TITLE}}</p>
+          <div class="row">
+            <span class="chip">{{TALK_2_DISC}}</span>
+            <span class="loc">{{TALK_2_LOCATION}}</span>
+          </div>
+        </div>
+      </li>
+      <li class="speaker">
+        <span class="num">Talk 3</span>
+        <div>
+          <h3>{{TALK_3_NAME}}</h3>
+          <p class="title">{{TALK_3_TITLE}}</p>
+          <div class="row">
+            <span class="chip">{{TALK_3_DISC}}</span>
+            <span class="loc">{{TALK_3_LOCATION}}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="p-register">
+    <div class="reg-copy">
+      <h2>Register free — and you're set for every future symposium</h2>
+      <p>Registrations are reviewed to keep this a clinician-only space. Please use a work email; your Microsoft Teams link is emailed once you're approved.</p>
+      <a class="reg-link" href="{{REG_LINK}}">{{REG_LINK}}</a>
+    </div>
+    <div class="reg-badge">
+      <span class="k">Cost</span>
+      <span class="v">Free</span>
+    </div>
+  </div>
+
+  <footer class="p-foot">
+    <div class="who">
+      <svg class="mark" aria-hidden="true"><use href="#berry"/></svg>
+      <p>Convened by Chris, Frances and Heidi as part of the education role of the SLHD multidisciplinary paediatric feeding team. A clinician-led practice-sharing forum — <strong>not a clinical service, and not recorded.</strong></p>
+    </div>
+    <p class="site">Free · Online<br>Live only — not recorded</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
