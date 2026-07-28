@@ -24,6 +24,10 @@ const OUTPUT_PATH = path.join(__dirname, 'index.html');
 
 const DEFAULT_TIME_LINE = '12:00 – 1:30 pm AEST';
 
+// Used for every "get in touch" link on the page whenever the form's
+// "Contact us form link" question is left blank (which it is by default).
+const DEFAULT_CONTACT_LINK = 'https://forms.cloud.microsoft/r/xGB3y3PwXP';
+
 // Each column is identified by the first line of its (possibly multi-line)
 // header, matched case-insensitively as a prefix — tolerant of the "eg: ..."
 // help text Google Forms appends after a line break, and of minor future
@@ -185,7 +189,7 @@ async function main() {
 
   const data = {
     REG_LINK: simple('regLink'),
-    CONTACT_LINK: simple('contactLink') || '#',
+    CONTACT_LINK: simple('contactLink') || DEFAULT_CONTACT_LINK,
     DATE_LINE: simple('date'),
     TIME_LINE: simple('time') || DEFAULT_TIME_LINE,
     BADGE_TEXT: simple('regStatus'),
