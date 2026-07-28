@@ -1,0 +1,36 @@
+name: Refresh site from form
+
+on:
+  schedule:
+    # Once a day at 09:17 UTC (~19:17-20:17 AEST/AEDT). Times just before/after
+    # the hour avoid the load spike everyone else's midnight/on-the-hour crons hit.
+    - cron: '17 9 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rebuild index.html from the form's data
+        run: node build.js
+
+      - name: Commit and push if index.html changed
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No change to index.html — nothing to publish."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Refresh site from form submission"
+          git push
