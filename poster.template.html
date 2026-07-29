@@ -196,11 +196,12 @@
   }
   .p-register .reg-badge{
     flex:none; align-self:stretch; min-width:34mm;
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; text-align:center;
-    background:var(--primary); color:#fff; border-radius:12px; padding:6mm 5mm;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; text-align:center;
+    background:#fff; color:var(--primary-dk); border:1.5px solid var(--line-2); border-radius:12px; padding:5mm;
   }
-  .p-register .reg-badge .k{font-size:8.5pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase; opacity:.85}
-  .p-register .reg-badge .v{font-family:"Fraunces","Georgia",serif; font-weight:600; font-size:16pt; line-height:1.1}
+  .p-register .reg-badge .reg-qr{width:32mm; height:32mm; display:block}
+  .p-register .reg-badge .k{font-size:8pt; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--primary)}
+  .p-register .reg-badge .v{font-size:7pt; font-weight:600; color:var(--primary-dk); line-height:1.25; white-space:nowrap}
 
   .p-foot{
     margin-top:auto; padding:6mm 15mm 6mm;
@@ -342,8 +343,9 @@
       <a class="reg-link" href="{{REG_LINK}}">{{REG_LINK}}</a>
     </div>
     <div class="reg-badge">
-      <span class="k">Cost</span>
-      <span class="v">Free</span>
+      <img class="reg-qr" src="qr.png" alt="QR code linking to the symposium website">
+      <span class="k">Scan to visit</span>
+      <span class="v">nationalsymposium.vercel.app</span>
     </div>
   </div>
 
