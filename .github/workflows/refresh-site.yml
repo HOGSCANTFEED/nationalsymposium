@@ -20,17 +20,38 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Rebuild index.html from the form's data
-        run: node build.js
-
-      - name: Commit and push if index.html changed
+      # Build the pages and publish them, retrying if a manual upload lands on
+      # main at the same moment. Each attempt rebuilds from the LATEST templates
+      # (build.js is deterministic from the form + templates), commits both
+      # generated pages, and pushes. A push rejected as "non-fast-forward" just
+      # means someone uploaded to GitHub during this run: we sync to the latest
+      # main and try again rather than failing the whole run.
+      - name: Rebuild and publish index.html and poster.html
         run: |
-          if git diff --quiet -- index.html; then
-            echo "No change to index.html — nothing to publish."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git commit -m "Refresh site from form submission"
-          git push
+
+          for attempt in 1 2 3 4 5; do
+            node build.js
+
+            if git diff --quiet -- index.html poster.html; then
+              echo "No change to index.html or poster.html — nothing to publish."
+              exit 0
+            fi
+
+            git add index.html poster.html
+            git commit -m "Refresh site from form submission"
+
+            if git push; then
+              echo "Published on attempt $attempt."
+              exit 0
+            fi
+
+            echo "Push rejected on attempt $attempt — a manual upload landed on main at the same time. Syncing to the latest and rebuilding..."
+            git fetch origin main
+            git reset --hard origin/main
+            sleep 5
+          done
+
+          echo "Could not publish after 5 attempts — leaving this run red so it gets a look."
+          exit 1
