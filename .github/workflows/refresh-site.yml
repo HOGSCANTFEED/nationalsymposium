@@ -2,9 +2,8 @@ name: Refresh site from form
 
 on:
   schedule:
-    # Once a day at 09:17 UTC (~19:17-20:17 AEST/AEDT). Times just before/after
-    # the hour avoid the load spike everyone else's midnight/on-the-hour crons hit.
-    - cron: '17 9 * * *'
+       # Once a day at 02:30 UTC = 12:30 pm AEST (1:30 pm when daylight saving is on).
+    - cron: '30 2 * * *'
   workflow_dispatch: {}
 
 permissions:
